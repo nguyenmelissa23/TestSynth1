@@ -74,39 +74,49 @@ function finishedLoading(bufferList) {
 		};
 		sourceArray.push(sourceObj);
 	}
-	console.log("sourceArray: ", sourceArray);
+	if (sourceArray[0]){
+		console.log("sourceArray is not empty");
+	} else console.log("sourceArray is empty");
+	createOptionElement();
 }
+//===================finished loading================
 
 
 // ======== START/STOP TRACKS=========================
-(function(){
-	createOptionElement();
 
-	$("#trackName").on("input", function(){
-		console.log("changing track....");
-		if (_isPlaying){
-			startTrack();
-		}
-		$("#startTrack").on("click", function(){
-			startTrack();
-		});
- 
-	});
+//if change track, stop current and play the new one
+$("#trackDropBar").on("input", function(){
+	console.log("changing track to", $("#trackDropBar").val());
+	if (_isPlaying === true){
+		stopTrack();
+		startTrack();
+	}
+});
 
-	$("#stopTrack").on("click", function(){
-			stopTrack();
-	});
-})();
+$("#startTrack").on("click", function(){
+	startTrack();
+});
+
+$("#stopTrack").on("click", function(){
+	stopTrack();
+});
+//=======================================================
 
 function startTrack(){
-	if (_isPlaying == false){
-		var trackName = $("#trackName").val();
-		for (var i = 0; i < sourceArray.length; i ++){
-			if (sourceArray[i].name === trackName){
-				currentSource = sourceArray[i].source;
-				currentSource.connect(context.destination);
-				currentSource.start();
-				_isPlaying = true;
+	console.log("_isPlaying", _isPlaying)
+	var trackName = $("#trackDropBar").val();
+	if (trackName === 0){
+		alert("Pick a drum track to start playing");
+		return;
+	} else {
+		if (_isPlaying === false){
+			for (var i = 0; i < sourceArray.length; i ++){
+				if (sourceArray[i].name === trackName){
+					currentSource = sourceArray[i].source;
+					currentSource.connect(context.destination);
+					currentSource.start();
+					_isPlaying = true;
+				}
 			}
 		}
 	}
@@ -127,7 +137,7 @@ function createOptionElement(){
 	console.log("createOptionElement");
 	for ( var i = 0; i < sourceArray.length; i++){
 		var optionHTML = "<option>"+ sourceArray[i].name +"</option>";
-		console.log(optionHTML);
+		//console.log(optionHTML);
 		$("#trackDropBar").append(optionHTML);
 	}
 }
