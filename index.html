@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Bootstrap link -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--jQuery link -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="./layout.css">
+   
+    <title>Lords of Synth</title>
+</head>
+<body>
+    <div class="container"> 
+        <div class="jumbotron">
+            <h1>Synthesizer</h1>
+        </div>
+
+
+        <div class="controlbutton">
+                <button class="btn btn-primary playBtn">
+                    Play
+                </button>
+                <br> <br>
+                <button class="btn btn-danger stopBtn">
+                    Stop
+                </button>
+        </div>
+
+        <br>
+
+        <!--ROW 1-->
+        <div class="row"> 
+        
+            <div class="osc1 col-md-3">
+                <h4>Oscillator 1</h4>
+                <div class="row">
+                    <div class="waveform col-sm-6">
+                        <label for="waveform">Waveform</label>
+                        <br>
+                        <select id="waveformVal1">
+                            <option value="sine">Sine</option>
+                            <option value="square">Square</option>
+                            <option value="saw">Saw</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </div>
+                    <div class="interval col-sm-6">
+                        <label for="interval">Interval</label>
+                        <br>
+                        <select id="intervalVal1">
+                            <option value="32">32</option>
+                            <option value="16">16</option>
+                            <option value="8">8</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="detune ">
+                        <input class="vertical-slider" orient="vertical" type="range" name="detune" value="50" max="100" min="0">
+                        Detune</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="gain ">
+                        <input class="vertical-slider" orient="vertical" type="range" name="gain" value="1" max="1" min="0">
+                        Gain</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="osc2 col-md-3">
+                <h4>Oscillator 2</h4>
+                <div class="row">
+                    <div class="waveform col-sm-6">
+                        <label for="waveform">Waveform</label>
+                        <br>
+                        <select id="waveformVal2">
+                            <option value="sine">Sine</option>
+                            <option value="square">Square</option>
+                            <option value="saw">Saw</option>
+                            <option value="triangle">Triangle</option>
+                        </select>
+                    </div>
+                    <div class="interval col-sm-6">
+                        <label for="interval">Interval</label>
+                        <br>
+                        <select id="intervalVal2">
+                            <option value="32">32</option>
+                            <option value="16">16</option>
+                            <option value="8">8</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="detune ">
+                        <input class="vertical-slider" orient="vertical" type="range" name="detune" value="50" max="100" min="0">
+                        Detune</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="gain ">
+                        <input class="vertical-slider" orient="vertical" type="range" name="gain" value="1" max="1" min="0">
+                        Gain</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter col-md-5">
+                <h4>Filter</h4>
+                <div>
+                    <label for="">Type</label><br>
+                    <select id="filterType">
+                        <option value="high">High-pass</option>
+                        <option value="low">Low-pass</option>
+                    </select>
+                </div>
+                <br>
+                <div class="filterDiv row">
+                    <div class="col-sm-4">
+                        <label for="cutoff filter ">
+                        <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                        Cutoff</label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="resonance">
+                            <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                        Resonance</label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="env">
+                            <input class="vertical-slider" orient="vertical" type="range" name="env" value="50" max="100" min="0">
+                        Env.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br> <br>
+
+        <!--ROW 2-->
+        <div class="row">
+            <div class="arpeggiator col-lg-6">
+
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6 filter-env">
+                        <h4>Filter Env.</h4>
+                        
+                        <div class="col-sm-3">
+                            <label for="attack">
+                            <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                            Attack</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="delay">
+                                <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                            Delay</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="sustain">
+                                <input class="vertical-slider" orient="vertical" type="range" name="env" value="50" max="100" min="0">
+                            Sustain</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="relase">
+                                <input class="vertical-slider" orient="vertical" type="range" name="env" value="50" max="100" min="0">
+                            Release</label>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="row">                
+                    <div class="col-md-6 volume-env">
+                        <h4>Volume Env.</h4>
+                        <div class="col-sm-3">
+                            <label for="attack">
+                            <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                            Attack</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="delay">
+                                <input class="vertical-slider" orient="vertical" type="range" name="cutoff" value="50" max="100" min="0">
+                            Delay</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="sustain">
+                                <input class="vertical-slider" orient="vertical" type="range" name="env" value="50" max="100" min="0">
+                            Sustain</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label for="release">
+                                <input class="vertical-slider" orient="vertical" type="range" name="env" value="50" max="100" min="0">
+                            Release</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br> <br>
+
+        <!--ROW 3-->
+        <div class="row">
+            <div class="master">
+                <div class="delay">
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <br> <br>
+
+
+        <!--KEYBOARD-->
+        <div id="keyboard">
+
+        </div>
+
+    </div>
+     <!--Keyboard-->
+    <script src="./js/qwerty-hancock.min.js"></script>
+    <script src="./js/keyboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.1/Pizzicato.js"></script>
+    <script src="./js/mainController.js"></script>
+    <script src="./node_modules/web-audio-daw/build/wad.js"></script>
+    <script src="./js/wad.js"></script>
+</body>
+</html>
